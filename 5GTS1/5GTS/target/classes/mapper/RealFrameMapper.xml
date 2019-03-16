@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wta.crud.dao.RealFrameMapper">
+  <resultMap id="BaseResultMap" type="com.wta.crud.bean.RealFrame">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="b_real_frame1" jdbcType="INTEGER" property="bRealFrame1" />
+    <result column="p_real_frame1" jdbcType="INTEGER" property="pRealFrame1" />
+    <result column="i_real_frame1" jdbcType="INTEGER" property="iRealFrame1" />
+    <result column="ipb_real_frame1" jdbcType="INTEGER" property="ipbRealFrame1" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, b_real_frame1, p_real_frame1, i_real_frame1, ipb_real_frame1
+  </sql>
+  <select id="selectDataCount" parameterType="String" resultType="int">
+  	select count(${_parameter}) from tbl_frame
+  </select>
+  <select id="selectByExample" parameterType="com.wta.crud.bean.RealFrameExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_frame
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_frame
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_frame
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wta.crud.bean.RealFrameExample">
+    delete from tbl_frame
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wta.crud.bean.RealFrame">
+    insert into tbl_frame (id, b_real_frame1, p_real_frame1, 
+      i_real_frame1, ipb_real_frame1)
+    values (#{id,jdbcType=INTEGER}, #{bRealFrame1,jdbcType=INTEGER}, #{pRealFrame1,jdbcType=INTEGER}, 
+      #{iRealFrame1,jdbcType=INTEGER}, #{ipbRealFrame1,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wta.crud.bean.RealFrame">
+    insert into tbl_frame
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bRealFrame1 != null">
+        b_real_frame1,
+      </if>
+      <if test="pRealFrame1 != null">
+        p_real_frame1,
+      </if>
+      <if test="iRealFrame1 != null">
+        i_real_frame1,
+      </if>
+      <if test="ipbRealFrame1 != null">
+        ipb_real_frame1,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bRealFrame1 != null">
+        #{bRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="pRealFrame1 != null">
+        #{pRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="iRealFrame1 != null">
+        #{iRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="ipbRealFrame1 != null">
+        #{ipbRealFrame1,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wta.crud.bean.RealFrameExample" resultType="java.lang.Long">
+    select count(*) from tbl_frame
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_frame
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.bRealFrame1 != null">
+        b_real_frame1 = #{record.bRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="record.pRealFrame1 != null">
+        p_real_frame1 = #{record.pRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="record.iRealFrame1 != null">
+        i_real_frame1 = #{record.iRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="record.ipbRealFrame1 != null">
+        ipb_real_frame1 = #{record.ipbRealFrame1,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_frame
+    set id = #{record.id,jdbcType=INTEGER},
+      b_real_frame1 = #{record.bRealFrame1,jdbcType=INTEGER},
+      p_real_frame1 = #{record.pRealFrame1,jdbcType=INTEGER},
+      i_real_frame1 = #{record.iRealFrame1,jdbcType=INTEGER},
+      ipb_real_frame1 = #{record.ipbRealFrame1,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wta.crud.bean.RealFrame">
+    update tbl_frame
+    <set>
+      <if test="bRealFrame1 != null">
+        b_real_frame1 = #{bRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="pRealFrame1 != null">
+        p_real_frame1 = #{pRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="iRealFrame1 != null">
+        i_real_frame1 = #{iRealFrame1,jdbcType=INTEGER},
+      </if>
+      <if test="ipbRealFrame1 != null">
+        ipb_real_frame1 = #{ipbRealFrame1,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wta.crud.bean.RealFrame">
+    update tbl_frame
+    set b_real_frame1 = #{bRealFrame1,jdbcType=INTEGER},
+      p_real_frame1 = #{pRealFrame1,jdbcType=INTEGER},
+      i_real_frame1 = #{iRealFrame1,jdbcType=INTEGER},
+      ipb_real_frame1 = #{ipbRealFrame1,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

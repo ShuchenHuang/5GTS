@@ -1,0 +1,46 @@
+一、环境搭建
+	
+	1. 为了方便调试，可能需要你建立Mysql数据库（如果没有数据库的提供链接，配置文件可能会报错）：
+	Mysql版本 5.7，
+	数据库名 ssm 用户名为root，密码为402664107，表名 tbl_frame，表中主键为id（自增），
+	b_real_frame1列(int类型), p_real_frame1列(int类型), 运行tbl_frame.sql 脚本（运行完可以从工程中删掉），
+	将数据插入到你建立好的表中 
+	
+	2. 服务器环境 ：Tomcat8.0.50
+	
+	3. JRE 采用的是 1.8 版本
+	
+	4. 采用的 MyEclipse2016 建立的工程，为了避免出现问题，建议使用这个版本
+	
+	5. MyEclipse2016 可能需要添加springsource-tool 插件， 版本为3.7.2
+	
+	6. 项目采用maven 管理，版本为3.5.3
+	       注意：maven 可能需要设置，如果jar包导入不到 Maven Dependencies
+	
+二、controller层的设计
+	
+	1. 为了方便修改，将远程医疗的业务写在当前FrameController 类下 ，目前写的测试都以 P帧为例（这里我把pb分开写的），
+	       真正的业务帧 是 i、p、b三个帧按一定顺序组合，即
+	       最后的序列ibp不在分开写，用ibp模拟序列和真实序列做比较。
+	
+	2. 将方法尽量留出接口，方便修改成ipb帧的业务
+	
+	3. 调用真实序列，通过Service 层，利用frameService 对象调用该层方法从数据库取得序列
+	
+	4. 产生模拟序列，调用utils 包中的 GenerateSimulatedFrameUtils.java 中的 generatedSequence() 方法
+	
+	5. 生成概率密度数据，调用utils 包中的FrameProbabilityDistribution.java 中的 statisticPD() 方法，注意返回的是double[][]，
+		需要读取到list 中再返回JSON 数据
+		
+	6. 返回JSON数据需要使用 bean 包下的 Msg类，数据通过Map returnData 属性封装，code状态码用于校验是否返回成功，便于调试
+	
+	
+注：
+	1. 最好做好版本管理，便于修改或找回之前版本	
+	
+	2. service及以下层最好了解，便于修改和调试
+	
+	3. 代码写的比较乱……勿喷……
+	
+	
+	

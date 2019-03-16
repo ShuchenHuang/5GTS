@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Require JSON DATA</title>
+    <title>动态获取数据</title>
+    <script type="text/javascript" src="Home/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="Home/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="Home/highcharts/modules/exporting.js"></script>
+    <script type="text/javascript" src="Home/highcharts/modules/data.js"></script>
+</head>
+<body>
+    <div id="container" style="width:550px;height:400px; margin: 0 auto"></div>
+    <div class="message"></div>
+    <script>
+        $(function () {
+            $.getJSON('data.json', function (data) {
+                var _data = data.data;
+                var AxisNames = _data.AxisNames, AxisUnit = _data.AxisUnit, AxisData = _data.AxisData,
+                    legendData = _data.legendData, totalNum = _data.totalNum;
+                $('#container').highcharts({
+                    title: {
+                        text: '报单顾客增长趋势图',
+                        x: -20 //center
+                    },
+                    subtitle: {
+                        align: "left",
+                        text: '建档总人数:' + totalNum
+                    },
+                    xAxis: {
+                        title: {
+                            text: AxisNames[0]
+                        },
+                        categories: AxisData[0]
+                    },
+                    yAxis: {
+                        title: {
+                            text: AxisNames[1]
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 1,
+                            color: '#808080'
+                        }]
+                    },
+                    tooltip: {
+                        valueSuffix: '人'
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'left',
+                        verticalAlign: 'middle',
+                        borderWidth: 0
+                    },
+                    series: [{
+                        name: '报单人次',
+                        data: AxisData[1][0]
+                    }]
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

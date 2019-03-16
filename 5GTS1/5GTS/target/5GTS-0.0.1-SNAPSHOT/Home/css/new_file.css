@@ -1,0 +1,71 @@
+body {
+	padding: 100px 0px;
+}
+
+h3 {
+	color: dodgerblue;
+}
+
+h4 {
+	width: 300px;
+	padding: 5px;
+	color: white;
+	/*border: 1px solid firebrick;*/
+	background: black;
+	border-radius: 3px;
+}
+.leftnav
+{
+	float: right;
+}
+.navbar-default {
+	/*height: 120px;*/
+	background-color: #3bbe7a;
+	border: 0px;
+}
+.navbar-brand
+{
+	color: white;
+	font-size: 30px;
+	font-family: "微软雅黑";
+	
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+
+  background-color: #3BBE7A;
+}
+
+
+
+.navbar-default .navbar-nav> li> a {
+	
+	text-align: center;
+	width: 120px;
+	color: white;
+	background-color: #3BBE7A;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: "微软雅黑";
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus
+{
+  color: white;
+  background-color: #3BBE7A;
+}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus
+{
+	color: white;
+	background-color: #3BBE7A;
+}
+.line-bottom
+{
+
+	border-top: 1px solid white;
+	width: 25px;
+	margin: auto;
+	display: none;
+	
+}

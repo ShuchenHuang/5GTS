@@ -1,0 +1,339 @@
+
+body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,input,form,a,p,textarea{
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+    /* color:white;*/
+}
+
+img{
+    border: none;
+    display: block;
+}
+
+.clearfloat{
+    zoom: 1;
+}
+
+.clearfloat:after{
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+/*reset样式结束*/
+body
+{
+	width: 100%;
+	min-width: 1280px;
+	overflow: scroll;
+	padding-top: 120px;			/*消除固定导航条的影响*/
+}
+
+
+/*导航条样式*/
+.navbar-default
+{
+	padding: 0px 100px;
+	height: 120px;
+	background-color: white;
+}
+.navbar-header .navbar-toggle
+{
+	border: 1px solid dodgerblue;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+
+  background-color: white;
+}
+.navbar-brand h3
+{
+	position: relative;
+	top: -58px;
+	left: 80px;
+	color: dodgerblue;
+	font-size: 30px;
+	font-family: "microsoft yahei";
+	font-weight: 500;
+}
+
+#mynav
+{
+	float: right;
+}
+
+.navbar-default .navbar-nav
+{
+	margin-top: 50px;
+}
+
+.navbar-default .navbar-nav> li> a {
+	
+	text-align: center;
+	width: 120px;
+	color: dodgerblue;
+	background-color: white;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: "微软雅黑";
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus
+{
+  font-size: 18px;
+  color: rgb(0,0,238);
+  background: white;
+}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus
+{
+	color: rgb(0,0,238);
+	background-color: white;
+}
+.line-bottom
+{
+
+	border-top: 1px solid rgb(0,0,238);
+	width: 25px;
+	margin: auto;
+	display: none;
+	
+}
+
+/*说明部分*/
+#explain .container
+{
+	width: 90%;
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+#explain img
+{
+	width: 80px;
+	margin: 50px auto;
+	
+}
+#explain h4
+{
+	color: royalblue;
+	margin: 30px;
+	font-size: 22px;
+	text-shadow: 1px -1px 3px gainsboro;
+}
+#explain p
+{
+	color: royalblue;
+	font-size: 18px;
+	font-weight: 500;
+	font-family: "微软雅黑";
+}
+/*展示部分样式*/
+#serviceem .container
+{
+	border: solid 2px royalblue;
+	border-radius: 10px;
+	padding: 20px;
+}
+#serviceem h4
+{
+	margin-bottom: 20px;
+}
+#serviceem .row
+{
+	margin-bottom: 50px;
+}
+#serviceem #result
+{
+	width: 30%
+	border-left-width:20px;
+	padding: 10px;
+	border: solid 2px dodgerblue;
+	border-radius: 5px;
+}
+#serviceem #addButton
+{
+	width: 40%
+	border-left-width:20px;
+	padding: 5px;
+	border: solid 2px dodgerblue;
+	border-radius: 2px;
+	background:#00FFFF ;
+}
+#serviceem .piccon
+{
+	width: 100%;
+	height: 600px;
+	
+	overflow: scroll;
+}
+#serviceem .piccon .container
+{
+	width: 100%;
+	border: none;
+}
+#serviceem .piccon img
+{
+	width: 100%;
+}
+#serviceem .piccon h5
+{
+	margin-top: 10px;
+	font-weight:bold ;
+}
+main .container .row
+{
+	padding-top: 10px;
+	
+}
+main h3
+{
+	text-align: center;
+	color: white;
+	font-size: 30px;
+}
+.container
+{
+	text-align: center;
+	margin-bottom: 100px;
+}
+.conheader
+{
+	margin: 100px auto;
+	padding: 80px;
+	width: 100%;
+	height: 200px;
+	background: url(../img/test2.jpg);
+}
+
+
+.description
+{
+	padding-top: 80px;
+	text-align: left;
+	/*float: left;*/
+	
+	color: royalblue;
+	font-weight: 500;
+}
+.description h4
+{
+	margin-top: 15px;
+	margin-bottom: 20px;
+	font-size: 25px;
+}
+.description p,
+.description button,
+.description input
+{
+	
+	font-size: 16px;
+	margin-left: 80px;
+	margin-bottom: 20px;
+}
+
+.piccon img
+{
+	width: 100%;
+	border-radius: 5px;
+}
+/*展示表格样式*/
+.tableinfo
+{
+	text-align: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: royalblue;
+	
+}
+.rt
+{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	background-color: green;
+}
+.wr
+{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	background-color: red;
+}
+table thead th,
+table td
+{
+	text-align: center;
+}
+
+.datacon table thead
+{
+	color: royalblue;
+	font-size: 16px;
+}
+.datacon table td
+{
+	color: green;
+	font-size: 14px;
+	font-weight: 500;
+}
+.historydata
+{
+	height: 200px;
+}
+.modal-header
+{
+	font-size: 20px;
+	color: dodgerblue;
+}
+.modal table thead
+{
+	color: dodgerblue;
+}
+.modal table td
+{
+	color: green;
+	font-size: 16px;
+	font-weight: 400;
+}
+.datacon
+{
+
+	padding: 20px;
+	border-bottom: 1px solid lightblue;
+	border-left: 1px solid lightblue;
+	box-shadow: 2px -2px 6px cornflowerblue;
+	border-radius: 5px;
+	padding: 5px;
+}
+.tablecon
+{
+	height: 300px;
+	overflow: scroll;
+}
+/*性能监测部分样式*/
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: dodgerblue;
+}
+.tab-pane div
+{
+	margin: 50px;
+}
+
+.datacon table .datacompare
+{
+	color: royalblue;
+}

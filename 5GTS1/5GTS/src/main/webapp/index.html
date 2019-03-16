@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv = "Content-Type" content = "text/html" charset = "UTF-8">
+		<title>主界面</title>
+		<!--Public解析为/test/public-->
+		<link rel = "stylesheet" type = "text/css" href = "Home/dist/css/bootstrap.min.css">
+		<link rel = "stylesheet" type = "text/css" href = "Home/css/telemedicine.css">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<!--响应式导航条-->
+			<!--固定导航栏-->
+			<div class = "navbar navbar-default navbar-fixed-top">
+				<div class = "container">
+					<div class = "row">
+						<div class = "navbar-header">
+							<!-- 响应式对应的下拉键写在brand之前，内容固定 。注意class,data-toggle.
+							data-target是需要隐藏的列表容器的class/id名-->
+							<button class = "navbar-toggle" type = "button" data-toggle = "collapse" data-target = "#mynav">
+								<!--sr-only屏幕阅读器-->
+								<span class = "sr-only">Toggle Navigation</span>
+         						<span class = "icon-bar" style = "background-color: dodgerblue;"></span>
+         						<span class = "icon-bar" style = "background-color: dodgerblue;"></span>
+         						<span class = "icon-bar" style = "background-color: dodgerblue;"></span>
+							</button>
+							<a class = "navbar-brand" href = "home.html">
+								<img src = "Home/img/brand.png" width = "100px" />
+								<h3>终端模拟器</h3>
+							</a>
+						</div>
+						<div class = "collapse navbar-collapse navbar-right" id = "mynav">
+							<ul class = "nav navbar-nav">
+								<li name = "navcon">
+									<a href = "telemedicine.html">远程医疗</a>
+									<!--<p class="line-bottom"></p>-->
+								</li>
+								<li name = "navcon">
+									<a href = "remoteDetection.jsp">远程监测</a>
+									<!--<p class="line-bottom"></p>-->
+								</li>
+								<li name = "navcon">
+									<a href = "smartHome.jsp">智能家居</a>
+									<!--<p class="line-bottom"></p>-->
+								</li>
+								<li name = "navcon">
+									<a href = "ARVR.html">AR/VR</a>
+								</li>
+								<li name = "navcon">
+									<a href = "index.html">返回首页</a>
+									<!--<p class="line-bottom"></p>-->
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--轮播图片-->
+			<div id="slidershow" class="carousel slide" data-ride="carousel" data-interval="3000">
+				<ol class="carousel-indicators">
+					<li class="active" data-target="#slidershow" data-slide-to="0"></li>
+					<li data-target="#slidershow" data-slide-to="1"></li>
+					<li data-target="#slidershow" data-slide-to="2"></li>
+					<li data-target="#slidershow" data-slide-to="3"></li>
+					<li data-target="#slidershow" data-slide-to="4"></li>
+				</ol>
+				<!-- 设置轮播图片 -->
+
+				<div class="carousel-inner">
+					<div class="item active">
+						<a href="##"><img src="Home/img/carouselone.jpg" width="100%" class="center-block" alt=""></a>
+					</div>
+					<div class="item">
+						<a href="##"><img src="Home/img/carouseltwo.jpg" width="100%" class="center-block" alt=""></a>
+					</div>
+					<div class="item">
+						<a href="##"><img src="Home/img/carouselthree.jpg" width="100%" class="center-block" alt=""></a>
+					</div>
+					<div class="item">
+						<a href="##"><img src="Home/img/carouselfour.jpg" width="100%" class="center-block" alt=""></a>
+					</div>
+					<div class="item">
+						<a href="##"><img src="Home/img/carouselfive.jpg" width="100%" class="center-block" alt=""></a>
+					</div>
+					<div class="carousel-caption"></div>
+				</div>
+			</div>
+            <!-- 设置轮播图片控制器 -->
+            <a class="left carousel-control" href="#slidershow" role="button" data-slide="prev">
+               <span class="glyphicon glyphicon-chevron-left"="color: lightskyblue;font-size: 50px;"></span>
+            </a>
+            <a class="right carousel-control" href="#slidershow" role="button" data-slide="next">
+               <span class="glyphicon glyphicon-chevron-right" style="color: lightskyblue;font-size: 50px;"></span>
+            </a>
+         </div>
+
+		<main>
+			<div id = "explain">
+				<div class = "conheader">
+					<h3>具体项目</h3>
+				</div>
+
+				<div class = "container">
+					<div class = "row">
+						<div class = "col-md-6">
+							<a href = "telemedicine.html"><img src = "Home/icon/medicine.jpg" /></a>
+							<a href = "telemedicine.html"><h4>远程医疗</h4></a>
+							<p>远程会诊业务界面<br/>展示远程医疗会诊主要组成部分</p>
+						</div>
+						<div class = "col-md-6">
+							<a href = "remoteDetection.jsp"><img src = "Home/icon/jiance.jpg" /></a>
+							<a href = "remoteDetection.jsp"><h4>远程监测</h4></a>
+							<p>远程监测业务界面<br/>展示远程监测会诊主要组成部分</p>							
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "col-md-6">
+							<a href = "smartHome.jsp"><img src = "Home/icon/jiaju.jpg" /></a>
+							<a href = "smartHome.jsp"><h4>智能家居</h4></a>
+							<p>智能家居业务界面<br/>展示智能家居主要组成部分</p>
+						</div>
+						<div class = "col-md-6">
+							<a href = "ARVR.html"><img src = "Home/icon/xuni.jpg" /></a>
+							<a href = "ARVR.html"><h4>AR/VR</h4></a>
+							<p>AR/VR业务界面<br/>展示AR/VR主要组成部分</p>							
+						</div> 
+					</div>
+				</div>
+
+	<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+   var title = {
+      text: 'Daily visits at www.highcharts.com'   
+   };
+   var subtitle = {
+      text: 'Source: Google Analytics'
+   };
+   var xAxis = {
+      tickInterval: 7 * 24 * 3600 * 1000, // one week
+      tickWidth: 0,
+      gridLineWidth: 1,
+      labels: {
+         align: 'left',
+         x: 3,
+         y: -3
+      }
+   };
+   var yAxis = [{ // left y axis
+         title: {
+            text: null
+         },
+         labels: {
+            align: 'left',
+            x: 3,
+            y: 16,
+            format: '{value:.,0f}'
+         },
+         showFirstLabel: false
+      },{ // right y axis
+         linkedTo: 0,
+         gridLineWidth: 0,
+         opposite: true,
+         title: {
+            text: null
+         },
+         labels: {
+            align: 'right',
+            x: -3,
+            y: 16,
+            format: '{value:.,0f}'
+         },
+         showFirstLabel: false
+      }
+   ];   
+
+   var tooltip = {
+      shared: true,
+      crosshairs: true
+   }
+
+   var legend = {
+      align: 'left',
+      verticalAlign: 'top',
+      y: 20,
+      floating: true,
+      borderWidth: 0
+   };
+
+   var plotOptions = {
+      series: {
+         cursor: 'pointer',
+         point: {
+            events: {
+               click: function (e) {
+                  hs.htmlExpand(null, {
+                     pageOrigin: {
+                        x: e.pageX || e.clientX,
+                        y: e.pageY || e.clientY
+                     },
+                     headingText: this.series.name,
+                     maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) 
+                        + ':<br/> ' + this.y + ' visits',
+                     width: 200
+                  });
+               }
+            }
+         },
+         marker: {
+            lineWidth: 1
+         }
+      }
+   }
+   
+   var series =  [{
+         name: 'All visits',
+         lineWidth: 4,
+         marker: {
+            radius: 4
+         }
+      }, {
+         name: 'New visitors'
+      }]
+
+   var json = {};
+
+   json.title = title;
+   json.subtitle = subtitle;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.tooltip = tooltip;
+   json.legend = legend;
+   json.series = series;
+   json.plotOptions = plotOptions;
+   
+   $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
+      var data = {
+         csv: csv
+      };
+	  json.data = data;
+	  $('#container').highcharts(json);
+   });   
+});
+</script>
+			<!--说明栏，说明四个版块的主要功能-->
+			
+    </main>
+		<script type = "text/javascript" src = "Home/jquery/jquery-1.9.1.min.js"></script>
+		<script type = "text/javascript" src = "Home/dist/js/bootstrap.min.js"></script>
+		<!-- 放在body中生效 -->
+   <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script src="http://code.highcharts.com/highcharts.js"></script>   
+   <script src="http://code.highcharts.com/modules/data.js"></script> 
+
+		<script type = "text/javascript" src = "Home/js/telemedicine.js"></script>
+
+		<!--折线图显示使用highcharts-->
+		<script src = "Home/highcharts/highcharts.js"></script>
+		<script src = "Home/js/mychart.js"></script>
+	</body>
+
+</html>
